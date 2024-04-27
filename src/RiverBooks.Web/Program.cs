@@ -8,7 +8,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddFastEndpoints();
 
 // Add Module Services
-builder.Services.AddBookService();
+builder.Services.AddBookService(builder.Configuration);
 
 var app = builder.Build();
 
