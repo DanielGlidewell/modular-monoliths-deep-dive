@@ -2,3 +2,11 @@
 
 GET {{HostAddress}}/books/
 Accept: application/json
+
+###
+
+@BookId=F4B3E3B2-3B9A-4B5D-9B7B-2B0D7B3DCB6D
+GET {{HostAddress}}/books/{{BookId}}
+Accept: application/json
+
+###
