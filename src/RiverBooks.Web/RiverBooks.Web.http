@@ -10,3 +10,14 @@ GET {{HostAddress}}/books/{{BookId}}
 Accept: application/json
 
 ###
+
+POST {{HostAddress}}/books
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Id": "B7FD313F-0FC6-4D94-9A91-2E742B7596C2",
+  "Title": "The Silmarillion",
+  "Author": "J.R.R. Tolkien",
+  "Price": 20.99
+}
