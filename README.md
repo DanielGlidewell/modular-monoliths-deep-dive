@@ -3,6 +3,11 @@ This repo represents my work following along with Steve Smith's course at [Domet
 
 I will update this readme with my notes as I proceed through the course.
 
+## May 15th, 2024
+Still working through creating the rest of the book endpoints. Sketched out the endpoints for deleting a book as well as the one for updating the price of a book. 
+
+I decided to against the grain and made my price endpoint respond to PATCH requests instead of POST requests. Seemed appropriate. I can't see any reason not to keep it that way for now.
+
 ## April 29th, 2024
 ### Building the Web API
 Worked through creating the endpoints for finding a book by id and creating a new book.
