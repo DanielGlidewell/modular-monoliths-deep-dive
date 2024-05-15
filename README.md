@@ -3,6 +3,12 @@ This repo represents my work following along with Steve Smith's course at [Domet
 
 I will update this readme with my notes as I proceed through the course.
 
+## April 29th, 2024
+### Building the Web API
+Worked through creating the endpoints for finding a book by id and creating a new book.
+
+Noticed that Steve is using classes instead of records for the request objects. I might have chosen differently on my own, but this seems like a small detail when I'm not sure when I'd need the comparison by value perk of records. I do like their terseness though.
+
 ## April 27th, 2024
 ### Project Setup
 The module itself is responsible for defining the endpoints for consuming its services.
