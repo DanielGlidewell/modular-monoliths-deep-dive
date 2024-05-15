@@ -16,6 +16,7 @@ internal class DeleteBookEndpoint(IBookService bs) :
     DeleteBookRequest request,
     CancellationToken ct = default
   ) {
+    // handle not found
     await bookService.DeleteBookAsync(request.Id);
 
     await SendNoContentAsync(cancellation: ct);
