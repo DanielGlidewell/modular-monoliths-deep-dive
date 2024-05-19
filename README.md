@@ -3,6 +3,11 @@ This repo represents my work following along with Steve Smith's course at [Domet
 
 I will update this readme with my notes as I proceed through the course.
 
+## May 19th, 2024
+Wrapped up the section on setting up the book endpoints. We set up a testing project which runs integration tests against two of our endpoints and uses a test database to do so. I had to take a peek at the docs for `FastEndpoints.Testing` because some classes mentioned in the course had been deprecated already. Minor tweaks and everything is working.
+
+Finished by using the `FastEndpoints.Validator` class to easily implement some validation logic for our `UpdateBookPriceRequest` class. Now if a user sends bad data to the endpoint, the validator causes it to respond with a 400. I'm enjoying using FastEndpoints so far.
+
 ## May 15th, 2024
 Still working through creating the rest of the book endpoints. Sketched out the endpoints for deleting a book as well as the one for updating the price of a book. 
 
