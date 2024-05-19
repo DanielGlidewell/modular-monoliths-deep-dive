@@ -3,7 +3,7 @@ using FastEndpoints;
 namespace RiverBooks.Books;
 
 internal class Update(IBookService bs) : 
-  Endpoint<UpdatePriceRequest> {
+  Endpoint<UpdateBookPriceRequest> {
 
   private readonly IBookService bookService = bs;
 
@@ -13,7 +13,7 @@ internal class Update(IBookService bs) :
   }
 
   public override async Task HandleAsync(
-    UpdatePriceRequest request,
+    UpdateBookPriceRequest request,
     CancellationToken ct = default
   ) {
     // handle not found

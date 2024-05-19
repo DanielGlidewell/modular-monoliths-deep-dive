@@ -1,6 +1,6 @@
 namespace RiverBooks.Books;
 
-public record UpdatePriceRequest (
+public record UpdateBookPriceRequest (
   Guid Id,
   decimal Price
 );
