@@ -2,7 +2,7 @@
 
 namespace RiverBooks.Books;
 
-internal class ListBooksEndpoint(IBookService bs) :
+internal class List(IBookService bs) :
   EndpointWithoutRequest<ListBooksResponse> {
   
   private readonly IBookService bookService = bs;

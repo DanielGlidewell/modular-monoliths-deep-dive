@@ -2,7 +2,7 @@ using FastEndpoints;
 
 namespace RiverBooks.Books;
 
-internal class UpdatePriceEndpoint(IBookService bs) : 
+internal class Update(IBookService bs) : 
   Endpoint<UpdatePriceRequest> {
 
   private readonly IBookService bookService = bs;
