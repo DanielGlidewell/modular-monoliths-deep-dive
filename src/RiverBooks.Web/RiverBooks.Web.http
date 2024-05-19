@@ -21,3 +21,23 @@ Content-Type: application/json
   "Author": "J.R.R. Tolkien",
   "Price": 20.99
 }
+
+###
+
+GET {{HostAddress}}/books/B7FD313F-0FC6-4D94-9A91-2E742B7596C2
+Accept: application/json
+
+###
+
+DELETE {{HostAddress}}/books/B7FD313F-0FC6-4D94-9A91-2E742B7596C2
+Accept: application/json
+
+###
+@NewPrice=19.99
+PATCH {{HostAddress}}/books/B7FD313F-0FC6-4D94-9A91-2E742B7596C2/price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Price": {{NewPrice}}
+}
