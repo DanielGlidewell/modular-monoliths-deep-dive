@@ -1,4 +1,4 @@
-@HostAddress = http://localhost:5182
+@HostAddress = https://localhost:7223
 
 GET {{HostAddress}}/books/
 Accept: application/json
@@ -41,3 +41,48 @@ Content-Type: application/json
 {
   "Price": {{NewPrice}}
 }
+
+###
+
+POST {{HostAddress}}/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"rickybobby@iwannagofast.com",
+  "password":"$h4ke4ndb4kE"
+} 
+
+###
+
+POST {{HostAddress}}/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"rickybobby@iwannagofast.com",
+  "password":"$h4ke4ndb4kE"
+}
+
+###
+
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJyaWNreWJvYmJ5QGl3YW5uYWdvZmFzdC5jb20iLCJpYXQiOjE3MTY5MTgzMzcsImV4cCI6MTcxNjkyMTkzNywibmJmIjoxNzE2OTE4MzM3fQ._0o1kdjEfJ-yW5_CN7Z8mUps_9Yn9d2jjpYw87LLiEw
+
+# Add item to cart
+POST {{HostAddress}}/cart
+Accept: text/plain 
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "bookId": "B7FD313F-0FC6-4D94-9A91-2E742B7596C2",
+  "quantity": 1
+}
+
+###
+
+GET {{HostAddress}}/cart
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###

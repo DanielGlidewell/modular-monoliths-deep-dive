@@ -3,6 +3,26 @@ This repo represents my work following along with Steve Smith's course at [Domet
 
 I will update this readme with my notes as I proceed through the course.
 
+## May 28th, 2024
+Modeled a `CartItem` and enhanced `ApplicationUser` to have a concept of a shopping cart. This module is using the mediator pattern and CQRS as opposed to a simple service class in order to deliver a loosely-coupled feature set.
+
+Added the MediatR package to each of the projects. For those modules that are using MediatR (all of them) - configured each module's extensions to the `IServiceCollection` interface such that they also add their containing `Assembly` to a list which is then used by the MediatR package's `AddMediatR` extension method to perform all of the necessary setup.
+
+Implemented an endpoint and a command handler for adding an item to the user's shopping cart. Created an abstraction for the `UserRepository`.
+
+Implementation for `IApplicationUserRepository`.
+
+Implemented the DTO, endpoint, query, and query handler for getting the items in a user's cart.
+
+HUGE: Added a "Contracts" project which allows for cross-module communication without the need for one module to directly depend on another. Instead, each module depends on the contracts project(s) which are relevant to their concerns and the MediatR package takes care of facilitating loosely-coupled communication between them via the types defined in the contracts.
+
+## May 27th, 2024
+Today was focused on getting the `UsersModule` up and running. Had a few more tweaks to make due to API deprecations in the external libraries used by the project. 
+
+Two main pieces of functionality include creating a user and logging in. We leveraged the `Microsoft.AspnetCore.Identity` and `Microsoft.AspnetCore.Identity.EntityFrameworkCore` namespaces.
+
+We also added logging with `Serilog` to the project, updated `FastEndpoints` version, migrated the database to support users, and set the app to only run over HTTPS.
+
 ## May 19th, 2024
 Wrapped up the section on setting up the book endpoints. We set up a testing project which runs integration tests against two of our endpoints and uses a test database to do so. I had to take a peek at the docs for `FastEndpoints.Testing` because some classes mentioned in the course had been deprecated already. Minor tweaks and everything is working.
 
