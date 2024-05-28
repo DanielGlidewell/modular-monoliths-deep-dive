@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
-namespace RiverBooks.Books;
+namespace RiverBooks.Books.Data;
 
 public class BookDbContext : DbContext {
   internal DbSet<Book> Books { get; set; }
