@@ -3,6 +3,9 @@ This repo represents my work following along with Steve Smith's course at [Domet
 
 I will update this readme with my notes as I proceed through the course.
 
+## May 28th, 2024
+Modeled a `CartItem` and enhanced `ApplicationUser` to have a concept of a shopping cart. 
+
 ## May 27th, 2024
 Today was focused on getting the `UsersModule` up and running. Had a few more tweaks to make due to API deprecations in the external libraries used by the project. 
 
