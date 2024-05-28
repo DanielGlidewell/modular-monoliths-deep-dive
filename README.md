@@ -1,7 +1,9 @@
 # Modular Monoliths - Getting Started 
-This repo represents my work following along with Steve Smith's course at [Dometrain](https://www.dometrain.com).
+This repo represents my work following along with the course [Steve Smith](https://ardalis.com/) created at [Dometrain](https://www.dometrain.com).
 
 I will update this readme with my notes as I proceed through the course.
+
+EDIT: May 28th - I've finished! This is such a fantastic course and I can't recommend it enough for grokking how to architect modular systems in general and in .NET specifically. Bravo.
 
 ## May 28th, 2024
 Modeled a `CartItem` and enhanced `ApplicationUser` to have a concept of a shopping cart. This module is using the mediator pattern and CQRS as opposed to a simple service class in order to deliver a loosely-coupled feature set.
