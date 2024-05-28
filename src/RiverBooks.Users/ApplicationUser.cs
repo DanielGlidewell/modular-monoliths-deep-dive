@@ -19,6 +19,8 @@ public class ApplicationUser : IdentityUser
     if (existingItem != null)
     {
       existingItem.UpdateQuantity(existingItem.Quantity + item.Quantity);
+      existingItem.UpdateDescription(item.Description);
+      existingItem.UpdatePrice(item.UnitPrice);
     }
     else
     {
