@@ -14,6 +14,8 @@ Implementation for `IApplicationUserRepository`.
 
 Implemented the DTO, endpoint, query, and query handler for getting the items in a user's cart.
 
+HUGE: Added a "Contracts" project which allows for cross-module communication without the need for one module to directly depend on another. Instead, each module depends on the contracts project(s) which are relevant to their concerns and the MediatR package takes care of facilitating loosely-coupled communication between them via the types defined in the contracts.
+
 ## May 27th, 2024
 Today was focused on getting the `UsersModule` up and running. Had a few more tweaks to make due to API deprecations in the external libraries used by the project. 
 
