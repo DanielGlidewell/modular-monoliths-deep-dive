@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RiverBooks.Users.Data;
 using Serilog;
 
 namespace RiverBooks.Users;
@@ -20,6 +21,8 @@ public static class UserModuleExtensions
 
     services.AddIdentityCore<ApplicationUser>()
       .AddEntityFrameworkStores<UsersDbContext>();
+
+    services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();  
 
     // Because we're using MediatR, add the assembly to the list
     mediatRAssemblies.Add(typeof(UserModuleExtensions).Assembly);
