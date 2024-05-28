@@ -3,6 +3,13 @@ This repo represents my work following along with Steve Smith's course at [Domet
 
 I will update this readme with my notes as I proceed through the course.
 
+## May 27th, 2024
+Today was focused on getting the `UsersModule` up and running. Had a few more tweaks to make due to API deprecations in the external libraries used by the project. 
+
+Two main pieces of functionality include creating a user and logging in. We leveraged the `Microsoft.AspnetCore.Identity` and `Microsoft.AspnetCore.Identity.EntityFrameworkCore` namespaces.
+
+We also added logging with `Serilog` to the project, updated `FastEndpoints` version, migrated the database to support users, and set the app to only run over HTTPS.
+
 ## May 19th, 2024
 Wrapped up the section on setting up the book endpoints. We set up a testing project which runs integration tests against two of our endpoints and uses a test database to do so. I had to take a peek at the docs for `FastEndpoints.Testing` because some classes mentioned in the course had been deprecated already. Minor tweaks and everything is working.
 

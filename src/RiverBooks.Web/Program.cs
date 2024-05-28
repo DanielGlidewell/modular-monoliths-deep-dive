@@ -1,4 +1,6 @@
 using FastEndpoints;
+using FastEndpoints.Security;
+using FastEndpoints.Swagger;
 using RiverBooks.Books;
 using RiverBooks.Users;
 using Serilog;
@@ -12,28 +14,25 @@ logger.Information("Starting RiverBooks.Web");
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseSerilog((_, config) => 
+builder.Host.UseSerilog((_, config) =>
     config.ReadFrom.Configuration(builder.Configuration));
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddFastEndpoints();
+builder.Services
+    .AddAuthenticationJwtBearer(s => s.SigningKey = builder.Configuration["Auth:JwtSecret"])
+    .AddAuthorization()
+    .AddFastEndpoints()
+    .SwaggerDocument();
 
-// Add Module Services
 builder.Services.AddBookService(builder.Configuration, logger);
 builder.Services.AddUserModuleServices(builder.Configuration, logger);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseAuthentication()
+    .UseAuthorization();
 
-app.UseHttpsRedirection();
-
-app.UseFastEndpoints();
+app.UseFastEndpoints()
+    .UseSwaggerGen();
 
 app.Run();
 

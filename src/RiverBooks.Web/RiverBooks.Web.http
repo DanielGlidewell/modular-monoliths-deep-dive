@@ -1,4 +1,4 @@
-@HostAddress = http://localhost:5182
+@HostAddress = https://localhost:7223
 
 GET {{HostAddress}}/books/
 Accept: application/json
@@ -41,3 +41,29 @@ Content-Type: application/json
 {
   "Price": {{NewPrice}}
 }
+
+###
+
+POST {{HostAddress}}/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"rickybobby@iwannagofast.com",
+  "password":"$h4ke4ndb4kE"
+} 
+
+###
+
+POST {{HostAddress}}/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"rickybobby@iwannagofast.com",
+  "password":"$h4ke4ndb4kE"
+}
+
+###
+
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJyaWNreWJvYmJ5QGl3YW5uYWdvZmFzdC5jb20iLCJpYXQiOjE3MTY4MzMxNzksImV4cCI6MTcxNjgzNjc3OSwibmJmIjoxNzE2ODMzMTc5fQ.4eOojg7ayDQHSVrRkryQXJkRchyIVp7KWazIlCar4UI
