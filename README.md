@@ -8,6 +8,8 @@ Modeled a `CartItem` and enhanced `ApplicationUser` to have a concept of a shopp
 
 Added the MediatR package to each of the projects. For those modules that are using MediatR (all of them) - configured each module's extensions to the `IServiceCollection` interface such that they also add their containing `Assembly` to a list which is then used by the MediatR package's `AddMediatR` extension method to perform all of the necessary setup.
 
+Implemented an endpoint and a command handler for adding an item to the user's shopping cart. Created an abstraction for the `UserRepository`.
+
 ## May 27th, 2024
 Today was focused on getting the `UsersModule` up and running. Had a few more tweaks to make due to API deprecations in the external libraries used by the project. 
 
