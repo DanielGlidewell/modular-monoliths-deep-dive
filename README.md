@@ -6,6 +6,8 @@ I will update this readme with my notes as I proceed through the course.
 ## May 28th, 2024
 Modeled a `CartItem` and enhanced `ApplicationUser` to have a concept of a shopping cart. 
 
+Added the MediatR package to each of the projects. For those modules that are using MediatR (all of them) - configured each module's extensions to the `IServiceCollection` interface such that they also add their containing `Assembly` to a list which is then used by the MediatR package's `AddMediatR` extension method to perform all of the necessary setup.
+
 ## May 27th, 2024
 Today was focused on getting the `UsersModule` up and running. Had a few more tweaks to make due to API deprecations in the external libraries used by the project. 
 

@@ -10,7 +10,8 @@ public static class UserModuleExtensions
   public static IServiceCollection AddUserModuleServices(
     this IServiceCollection services,
     ConfigurationManager config,
-    ILogger logger)
+    ILogger logger,
+    List<System.Reflection.Assembly> mediatRAssemblies)
   {
     string? connection = config.GetConnectionString("UsersConnectionString");
     
@@ -19,6 +20,9 @@ public static class UserModuleExtensions
 
     services.AddIdentityCore<ApplicationUser>()
       .AddEntityFrameworkStores<UsersDbContext>();
+
+    // Because we're using MediatR, add the assembly to the list
+    mediatRAssemblies.Add(typeof(UserModuleExtensions).Assembly);
 
     logger.Information("User module services registered");
 
