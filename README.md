@@ -1,6 +1,14 @@
 # Modular Monoliths - Deep Dive
 This repo is my work following the course created by [Steve Smith](https://ardalis.com/) at [Dometrain](https://www.dometrain.com). This course is focused on learning how to put modularity at the center of the architecture of a monolithic (single deployment artifact) web application, but the lessons should be relevant to designing modular software in general.
 
+## June 2nd, 2024
+Beginning work on the "Order Processing" module and enhancing the "Users" module. Functional and Non-Functional features of these changes include:
+- Placing orders and adding shipping addresses for users 
+- Implementing the "Materialized View" pattern for caching a list of users' shipping addresses (includes updating the cache by way of events from the users module)
+- Adopting a clean architecture organizational style
+- Enforcing the clean architeture rules using `ArchUnit.NET`
+- Implementing the "Chain of Responsiblity" pattern for cross-cutting concerns 
+
 ## May 28th, 2024
 Modeled a `CartItem` and enhanced `ApplicationUser` to have a concept of a shopping cart. This module is using the mediator pattern and CQRS as opposed to a simple service class in order to deliver a loosely-coupled feature set.
 
