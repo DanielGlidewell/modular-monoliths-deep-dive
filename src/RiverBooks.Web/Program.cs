@@ -1,8 +1,9 @@
-using System.Reflection;
+﻿using System.Reflection;
 using FastEndpoints;
 using FastEndpoints.Security;
 using FastEndpoints.Swagger;
 using RiverBooks.Books;
+using RiverBooks.OrderProcessing;
 using RiverBooks.Users;
 using Serilog;
 
@@ -28,6 +29,7 @@ builder.Services
 List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
 builder.Services.AddBookModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUsersModuleServices(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
 // Set up MediatR for those Assemblies which have added themselves to the mediatRAssemblies list
 builder.Services.AddMediatR(config => 
